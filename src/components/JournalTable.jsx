@@ -1,33 +1,45 @@
-import React from 'react'
+import React,{ useContext } from 'react'
+
+import { journalListContext } from '../context/journalList-context'
 
 
+const JournalTable = () => {
 
-const JournalTable = ( { journalList, removeJournal, addToLog, logData, setLogData} ) => {
+    const { journalList, setJournalList, logData, addToLog} = useContext(journalListContext)
 
+    const removeJournal = (item) => {
+        setJournalList(journalList.filter((el) =>{
+            return el.key !== item
+        }))
+      }
 
 
     return (
-        <div>
-        <table className='table'>
-            <thead>
-                <tr>
+        <div className='journaltable-div'>
+        <table className='table table-journal'>
+            <thead className='table-head'>
+                <tr className='table-head-row'>
                     <th>Task</th>
                     <th>Date-created</th>
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className='table-body'>
                 { journalList.map((entry) => {
                     const { key, journal, time } = entry
                     return (
-                        <tr key={key}>
+                        <tr key={key} className="table-body-row">
                             <td>{journal}</td>
                             <td>{time}</td>
-                            <td><button onClick={(e) => {
+                            <td><button 
+                                className='button button-complete'
+                            onClick={(e) => {
                                 e.stopPropagation
                                 addToLog(key)
                                 removeJournal(key)
-                            }}>completed</button><button onClick={(e) => {
+                            }}>completed</button><button 
+                                className='button button-delete'
+                            onClick={(e) => {
                                 e.stopPropagation
                                 addToLog(key)
                                 removeJournal(key)
@@ -37,29 +49,6 @@ const JournalTable = ( { journalList, removeJournal, addToLog, logData, setLogDa
                 }) }
             </tbody>
         </table>
-
-<table className='table'>
-        <thead>
-            <tr>
-                <th>Logs</th>
-                <th>Logs Date</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            {logData && logData.map((log) => {
-                const { journal, key, time } = log
-                return (
-                    <tr key={key}>
-                        <td>{journal}</td>
-                        <td>{time}</td>
-                        <td>status</td>
-                    </tr>
-                )
-                
-            })}
-        </tbody>
-    </table>
         
     </div>
 

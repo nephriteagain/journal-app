@@ -4,6 +4,7 @@ import './App.css'
 import CreateJournal from './components/CreateJournal'
 import JournalTable from './components/JournalTable'
 import Logs from './components/Logs'
+import { journalListContext } from './context/journalList-context'
 
 
 function App() {
@@ -52,25 +53,16 @@ const removeJournal = (item) => {
 
 
   return (
-    <>
-      <CreateJournal 
-        writeJournal={writeJournal}
-        setWriteJournal={setWriteJournal}
-        addToList={addToList}
-      />
-      <JournalTable
-        journalList={journalList}
-        removeJournal={removeJournal}
-        addToLog={addToLog}
-
-        logData={logData}
-        setLogData={setLogData}
-      />
-      <Logs 
-        logData={logData}
-        setLogData={setLogData}
-      />
-    </>
+    <div className='app'>
+      <journalListContext.Provider
+        value={ { writeJournal, setWriteJournal, addToList, journalList, setJournalList, logData, setLogData, removeJournal, addToLog } }
+      >
+      <CreateJournal/>
+      <JournalTable/>
+      <Logs/>
+      </journalListContext.Provider>
+      
+    </div>
     
 
   )

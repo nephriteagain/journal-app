@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext} from 'react'
+
+import { journalListContext } from '../context/journalList-context'
 
 
-const  CreateJournal = ( { writeJournal, setWriteJournal, addToList} ) => {
+const  CreateJournal = () => {
+
+    const { writeJournal, setWriteJournal, addToList } = useContext(journalListContext)
+
     return (
         <div className="create-task">
             <input

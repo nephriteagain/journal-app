@@ -1,49 +1,182 @@
-#root {
-  max-width: 1280px;
+  #root {
+    margin: 0;
+    padding: 2rem;
+    text-align: center;
+  }
+
+.app {
+  width:100%;
+  height: 100vh;
+  margin: 0;
+  align-items: center;
+  padding: none;
+  background: linear-gradient(to right, #d7d0cc, #ffffff);
+
+  
+}
+
+.table-journal {
+  width: 70%;
+  max-width: 70%;
+  min-width: 70%;
   margin: 0 auto;
-  padding: 2rem;
+  margin-bottom: 10rem;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.table {
+.table-journal th,
+.table-journal td {
+  padding: 0.5rem;
   border: 1px solid black;
-  margin-top: 7rem;
-  margin-bottom: 7rem;
-  min-width: 40rem; 
 }
 
+.table-journal th {
+  background-color: lightgray;
+  font-weight: bold;
+}
+
+.table-head {
+  text-align: left;
+}
+
+.table-head-row th {
+  padding-bottom: 0.5rem;
+}
+
+.table-body-row td {
+  vertical-align: middle;
+}
+
+.button-complete {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.button-delete {
+  background-color: #f44336;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.button-complete,
+.button-delete {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-complete:hover,
+.button-delete:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.log-table {
+  width: 50%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  text-align: center;
+  color: white;
+  background-color: #333;
+}
+
+.log-table th,
+.log-table td {
+  padding: 0.2rem;
+  border: 1px solid black;
+}
+
+.log-table th {
+  background-color: #555;
+  font-weight: bold;
+}
+
+.log-row-head th {
+  padding-bottom: 0.5rem;
+}
+
+.log-row-body td {
+  vertical-align: middle;
+
+}
+
+.button-redo {
+  background-color: #fdd835;
+  color: black;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.button-redo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+td {
+  overflow: hidden;
+}
+
+.create-task {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-task {
+  width: 60%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3px;
+  color: #333;
+  background-color: lightblue;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  margin-right: 1rem;
+}
+
+
+.task-button {
+  height: 32px;
+  width: 35%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  background-color: rgb(52, 165, 99);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px 3px rgba(52, 165, 99, 0.5);
+}
+
+
+.task-button:hover {
+  background-color: #00bcd4;
+  color: #fff;
+  transform: scale(1.1);
+}
