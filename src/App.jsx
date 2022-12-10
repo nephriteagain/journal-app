@@ -1,10 +1,10 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 import CreateJournal from './components/CreateJournal'
 import JournalTable from './components/JournalTable'
 import Logs from './components/Logs'
-import { journalListContext } from './context/journalList-context'
+import { journalListContext } from "./context/journalList-context"
 
 
 function App() {
@@ -54,13 +54,21 @@ const removeJournal = (item) => {
 
   return (
     <div className='app'>
-      <journalListContext.Provider
-        value={ { writeJournal, setWriteJournal, addToList, journalList, setJournalList, logData, setLogData, removeJournal, addToLog } }
-      >
-      <CreateJournal/>
-      <JournalTable/>
-      <Logs/>
-      </journalListContext.Provider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={
+              <journalListContext.Provider
+                value={ { writeJournal, setWriteJournal, addToList, journalList, setJournalList, logData, setLogData, removeJournal, addToLog } }
+                    >
+                  <CreateJournal />
+                  <JournalTable />
+                </journalListContext.Provider>
+
+             } />
+            <Route path='/logs' element={ <Logs/> } />
+          </Routes>
+        </BrowserRouter>
+
       
     </div>
     
