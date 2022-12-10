@@ -45,11 +45,11 @@ const addToLog = (item, status) => {
 
 
 
-const removeJournal = (item) => {
-  setJournalList(journalList.filter((el) =>{
-      return el.key !== item
-  }))
-}
+// const removeJournal = (item) => {
+//   setJournalList(journalList.filter((el) =>{
+//       return el.key !== item
+//   }))
+// }
 
 
 

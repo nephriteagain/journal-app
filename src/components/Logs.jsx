@@ -14,16 +14,18 @@ const Logs = () => {
     navigate("/")
   }
 
-  const retryJournal = (item, id) => {
-    setLogData(logData.filter((id) => {
-      return logData.id !== logData.key
-    }))
-    
-    
+  const retryJournal = (item) => {
     let dateToday = `${new Date()}`.split('').slice(0, 21).join("")
-    let key = Date.now()
-    setJournalList([{'key': key, 'journal': item, 'time': `${dateToday}`}, ...journalList])
-  
+
+
+    item.time = dateToday
+    delete item.statusComplete
+    setJournalList([item, ...journalList])
+
+    let data = logData.filter((log) => {
+      return log !== item
+    })
+    setLogData(data)
   }
 
 
@@ -59,9 +61,10 @@ const Logs = () => {
                           <td>{journal}</td>
                           <td>{time}</td>
                           <td>{statusComplete}</td>
-                          <td><button className='button button-redo'  value={journal} onClick={(e) => {
-                            let item = e.target.value
-                            retryJournal(item, key)
+                          <td><button className='button button-redo' value={log} onClick={(e) => {
+                            let item = log
+                            e.stopPropagation
+                            retryJournal(item)
                           }} >Retry</button></td>
                       </tr>
                   )
