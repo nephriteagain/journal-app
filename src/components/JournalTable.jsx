@@ -1,11 +1,14 @@
 import React,{ useContext } from 'react'
+import { useNavigate  } from 'react-router-dom'
 
 import { journalListContext } from '../context/journalList-context'
 
 
 const JournalTable = () => {
 
-    const { journalList, setJournalList, logData, addToLog} = useContext(journalListContext)
+    const { journalList, setJournalList, addToLog} = useContext(journalListContext)
+
+    const navigate = useNavigate()
 
     const removeJournal = (item) => {
         setJournalList(journalList.filter((el) =>{
@@ -13,6 +16,10 @@ const JournalTable = () => {
         }))
       }
 
+    const handleLogs = () => {
+        navigate("/logs")
+    }
+    
 
     return (
         <div className='journaltable-div'>
@@ -35,13 +42,13 @@ const JournalTable = () => {
                                 className='button button-complete'
                             onClick={(e) => {
                                 e.stopPropagation
-                                addToLog(key)
+                                addToLog(key, "completed")
                                 removeJournal(key)
                             }}>completed</button><button 
                                 className='button button-delete'
                             onClick={(e) => {
                                 e.stopPropagation
-                                addToLog(key)
+                                addToLog(key, "deleted")
                                 removeJournal(key)
                             }}>delete</button></td>
                         </tr>
@@ -49,7 +56,9 @@ const JournalTable = () => {
                 }) }
             </tbody>
         </table>
-        
+        <div className='redirect-div'>
+            <button  className='redirect-logs'  style={{cursor: 'pointer'}} onClick={() => {handleLogs()}}> Check Logs</button>
+        </div>
     </div>
 
 

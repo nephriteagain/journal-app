@@ -171,7 +171,7 @@ td {
   background-color: rgb(52, 165, 99);
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px 3px rgba(52, 165, 99, 0.5);
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -179,4 +179,8 @@ td {
   background-color: #00bcd4;
   color: #fff;
   transform: scale(1.1);
+}
+
+.td-logo {
+  font-size: 200%;
 }

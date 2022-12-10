@@ -5,6 +5,7 @@ import CreateJournal from './components/CreateJournal'
 import JournalTable from './components/JournalTable'
 import Logs from './components/Logs'
 import { journalListContext } from "./context/journalList-context"
+import { LogsContext } from "./context/Logs-context"
 
 
 function App() {
@@ -29,14 +30,14 @@ function App() {
 // test
 
 
-const addToLog = (item) => {
+const addToLog = (item, status) => {
   let data = journalList.find((data) => {
     return data.key === item
   })
   let dateToday = `${new Date()}`.split('').slice(0, 21).join("")
   let newKey = Date.now()
   const { journal } = data
-  const journalLog = { "journal": journal, "key": newKey, "time": dateToday}
+  const journalLog = { "journal": journal, "key": newKey, "time": dateToday, statusComplete: status}
   setLogData([journalLog,...logData])
 }
 
@@ -58,14 +59,20 @@ const removeJournal = (item) => {
           <Routes>
             <Route path='/' element={
               <journalListContext.Provider
-                value={ { writeJournal, setWriteJournal, addToList, journalList, setJournalList, logData, setLogData, removeJournal, addToLog } }
+                value={ { writeJournal, setWriteJournal, addToList, journalList, setJournalList, addToLog } }
                     >
                   <CreateJournal />
                   <JournalTable />
                 </journalListContext.Provider>
 
              } />
-            <Route path='/logs' element={ <Logs/> } />
+            <Route path='/logs' element={ 
+              <LogsContext.Provider
+                value={{  logData, setLogData, journalList, setJournalList }}>
+                <Logs/>
+              </LogsContext.Provider>
+
+            } />
           </Routes>
         </BrowserRouter>
 
