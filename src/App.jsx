@@ -11,8 +11,9 @@ import { LogsContext } from "./context/Logs-context"
 function App() {
 
   const [ writeJournal, setWriteJournal ] = useState('')
-  const [ journalList, setJournalList ] = useState([])
-  const [ logData, setLogData ] = useState([])
+  const [ journalList, setJournalList ] = useState(JSON.parse(localStorage.getItem("journalList")) || [])
+  const [ logData, setLogData ] = useState(JSON.parse(localStorage.getItem("logData")) || [])
+  
 
 
   const clearInputArea = () => {
@@ -27,8 +28,6 @@ function App() {
     clearInputArea()
 }
 
-// test
-
 
 const addToLog = (item, status) => {
   let data = journalList.find((data) => {
@@ -41,8 +40,13 @@ const addToLog = (item, status) => {
   setLogData([journalLog,...logData])
 }
 
+useEffect(() => {
+  localStorage.setItem("journalList", JSON.stringify(journalList))
+}, [journalList])
 
-
+useEffect(() => {
+  localStorage.setItem("logData" , JSON.stringify(logData))
+}, [logData])
 
 
 // const removeJournal = (item) => {
@@ -50,6 +54,8 @@ const addToLog = (item, status) => {
 //       return el.key !== item
 //   }))
 // }
+
+
 
 
 

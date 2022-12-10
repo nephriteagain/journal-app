@@ -184,3 +184,14 @@ td {
 .td-logo {
   font-size: 200%;
 }
+
+
+.table-body {
+  overflow: scroll;
+  max-height: 600px;
+
+}
+
+/* .redirect-home, .redirect-logs {
+
+} */

@@ -31,16 +31,21 @@ const Logs = () => {
 
   return (
     <div className='logs-div'>
+        <div className='button-div'>
+          <button className='redirect-home' style={{cursor: 'pointer'}} onClick={() => {backToHome()}}>Back to Home</button><button className='button-clear'>Clear All Logs</button>
+        </div>
+
+
         <table className='log-table'>
-        <thead className='log-head'>
+          <thead className='log-head'>
             <tr className='log-row-head'>
                 <th>Logs</th>
                 <th>Logs Date</th>
                 <th>Status</th>
                 <th>Action</th>
             </tr>
-        </thead>
-        <tbody className='log-head'>
+          </thead>
+          <tbody className='log-head'>
             {logData && logData.map((log) => {
                 const { journal, key, time, statusComplete } = log
                 if (statusComplete === "completed") {
@@ -73,7 +78,7 @@ const Logs = () => {
             })}
         </tbody>
     </table>
-        <button className='redirect-home' style={{cursor: 'pointer'}} onClick={() => {backToHome()}}>Back to Home</button>
+
     </div>
     
   )

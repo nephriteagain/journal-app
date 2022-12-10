@@ -22,8 +22,13 @@ const JournalTable = () => {
     
 
     return (
+        
         <div className='journaltable-div'>
-        <table className='table table-journal'>
+            <div className='redirect-div'>
+            <button  className='redirect-logs'  style={{cursor: 'pointer'}} onClick={() => {handleLogs()}}> Check Logs</button>
+        </div>
+
+        <table className='table-journal'>
             <thead className='table-head'>
                 <tr className='table-head-row'>
                     <th>Task</th>
@@ -56,9 +61,7 @@ const JournalTable = () => {
                 }) }
             </tbody>
         </table>
-        <div className='redirect-div'>
-            <button  className='redirect-logs'  style={{cursor: 'pointer'}} onClick={() => {handleLogs()}}> Check Logs</button>
-        </div>
+
     </div>
 
 
