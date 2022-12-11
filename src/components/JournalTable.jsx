@@ -31,9 +31,9 @@ const JournalTable = () => {
         <table className='table-journal'>
             <thead className='table-head'>
                 <tr className='table-head-row'>
-                    <th>Task</th>
-                    <th>Date-created</th>
-                    <th>Action</th>
+                    <th className='task-column'>Task</th>
+                    <th className='date-column'>Date-created</th>
+                    <th className='action-column'>Action</th>
                 </tr>
             </thead>
             <tbody className='table-body'>

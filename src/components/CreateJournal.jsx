@@ -7,15 +7,9 @@ const  CreateJournal = () => {
 
     const { writeJournal, setWriteJournal, addToList } = useContext(journalListContext)
 
-    const submit = window.addEventListener('keydown', e => {
-        if (e.key === 13 ) {
-            console.log('you pressed enter')
-        }
-    })
-
 
     return (
-        
+        <div><h1 className="title">Journal App</h1>
         <div className="create-task">
             <input
                 className="input-task"
@@ -35,6 +29,7 @@ const  CreateJournal = () => {
                 type="submit"
                 onClick={()=>{if(writeJournal) {addToList(writeJournal)}}}
             >Create Task</button>
+        </div>
         </div>
     )
 }

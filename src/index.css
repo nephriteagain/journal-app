@@ -15,6 +15,11 @@
   -webkit-text-size-adjust: 100%;
 }
 
+html {
+  background: linear-gradient(to right, #d7d0cc, #ffffff);
+}
+
+
 * {
   box-sizing: border-box !important;
 }

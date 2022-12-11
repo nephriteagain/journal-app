@@ -13,6 +13,7 @@ const Logs = () => {
   const backToHome = () => {
     navigate("/")
   }
+  
 
   const retryJournal = (item) => {
     let dateToday = `${new Date()}`.split('').slice(0, 21).join("")
@@ -28,19 +29,27 @@ const Logs = () => {
     setLogData(data)
   }
 
+    const clearLogs = () => {
+      setLogData([])
+    }
+
 
   return (
     <div className='logs-div'>
         <div className='button-div'>
-          <button className='redirect-home' style={{cursor: 'pointer'}} onClick={() => {backToHome()}}>Back to Home</button><button className='button-clear'>Clear All Logs</button>
+          <button className='redirect-home' style={{cursor: 'pointer'}} onClick={() => {backToHome()}}>Back to Home</button> <button className='button-clear'
+            onClick={() => {
+              clearLogs()
+            }}
+          >Clear All Logs</button>
         </div>
 
 
         <table className='log-table'>
           <thead className='log-head'>
             <tr className='log-row-head'>
-                <th>Logs</th>
-                <th>Logs Date</th>
+                <th className='logs-column'>Logs</th>
+                <th>Log Date</th>
                 <th>Status</th>
                 <th>Action</th>
             </tr>
