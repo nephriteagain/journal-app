@@ -18,12 +18,12 @@
 html {
   height: 100vh;
   background: linear-gradient(to right, #d7d0cc, #ffffff);
-  overflow-y: hidden;
 }
 
 
 * {
   box-sizing: border-box !important;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 body {

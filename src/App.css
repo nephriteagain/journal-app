@@ -14,7 +14,6 @@
 }
 
 .title {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   padding-top: 1.5rem;
 }
 
@@ -87,11 +86,20 @@
   width: 121.85px;
 }
 
+.log-head {
+  overflow-x: hidden;
+  min-width: 760px;
+}
+
 .log-row-head {
   position: absolute;
   top: 171px;
 }
 
+.log-row-body {
+  min-width: 760px;
+  overflow-x: hidden;
+}
 
 .button-complete {
   background-color: #4CAF50;
@@ -130,6 +138,8 @@
 
 .log-table {
   width: 760px;
+  min-width: 760px;
+  overflow-x: hidden;
   margin: 0 auto;
   border-collapse: collapse;
   font-family: 'Courier New', monospace;
@@ -168,7 +178,6 @@
 }
 
 .redirect-home {
-  margin-right: 200px;
   background-color: rgb(58, 236, 236);
   border-color: rgb(58, 236, 236);
   cursor: pointer;
@@ -182,7 +191,9 @@
 }
 
 .button-clear { 
-  margin-left: 200px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
   background-color: rgb(247, 169, 60);
   border-color: rgb(247, 169, 60);
   cursor: pointer;
@@ -311,6 +322,68 @@ td {
 
 
 .scrollit {
-  overflow-y:scroll;
-  height:450px;
+  overflow-y: auto;
+  height: 417px;
+}
+
+
+.table-body > tr:nth-child(even) {
+  background: #CCC;
+  box-shadow: 0px -3px 5px  black;
+}
+.table-body > tr:nth-child(odd) {background: #FFF}
+
+
+/* clear logs modal */
+
+.modal-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  display:grid;
+  place-items:center;
+  transition: 0.3s ease-in-out all;
+  z-index:100;
+}
+.modal-container{
+  width:40vw;
+  max-width:800px;
+  height:20vh;
+  overflow:hidden;
+  background: white;
+  border-radius: 0.25rem;
+}
+
+.button-modal-delete {
+  background-color: #f44336;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 80px;
+}
+
+.button-modal-delete:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button-modal-cancel {
+  background-color: #22a0bc;
+  color: black;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 80px;
+  width: 144px;
+}
+
+.button-modal-cancel:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.2);
 }

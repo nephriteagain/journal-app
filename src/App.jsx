@@ -4,6 +4,7 @@ import './App.css'
 import CreateJournal from './components/CreateJournal'
 import JournalTable from './components/JournalTable'
 import Logs from './components/Logs'
+import ModalClear from "./components/ModalClear"
 import { journalListContext } from "./context/journalList-context"
 import { LogsContext } from "./context/Logs-context"
 
@@ -13,7 +14,7 @@ function App() {
   const [ writeJournal, setWriteJournal ] = useState('')
   const [ journalList, setJournalList ] = useState(JSON.parse(localStorage.getItem("journalList")) || [])
   const [ logData, setLogData ] = useState(JSON.parse(localStorage.getItem("logData")) || [])
-  
+  const [ showModal, setShowModal ] = useState(false)
 
 
   const clearInputArea = () => {
@@ -51,13 +52,6 @@ useEffect(() => {
 }, [logData])
 
 
-// const removeJournal = (item) => {
-//   setJournalList(journalList.filter((el) =>{
-//       return el.key !== item
-//   }))
-// }
-
-
 
 
 
@@ -76,8 +70,9 @@ useEffect(() => {
              } />
             <Route path='/logs' element={ 
               <LogsContext.Provider
-                value={{  logData, setLogData, journalList, setJournalList }}>
+              value={{  logData, setLogData, journalList, setJournalList, setShowModal }}>
                 <Logs/>
+                { showModal && <ModalClear /> }
               </LogsContext.Provider>
 
             } />

@@ -5,7 +5,7 @@ import { BsPersonCheck } from 'react-icons/bs'
 
 const Logs = () => {
   
-  const { logData, journalList, setJournalList, setLogData }  = useContext( LogsContext)
+  const { logData, journalList, setJournalList, setLogData, setShowModal }  = useContext( LogsContext)
 
 
   const navigate = useNavigate("/")
@@ -29,17 +29,18 @@ const Logs = () => {
     setLogData(data)
   }
 
-    const clearLogs = () => {
-      setLogData([])
-    }
-
 
   return (
     <div className=' logs-div'>
         <div className='button-div'>
           <button className='redirect-home' style={{cursor: 'pointer'}} onClick={() => {backToHome()}}>Back to Home</button> <button className='button-clear'
             onClick={() => {
-              clearLogs()
+              if (logData.length) {
+                setShowModal(true)
+              } else {
+                alert("Log Table is already empty!")
+              }
+              
             }}
           >Clear All Logs</button>
         </div>
@@ -54,7 +55,7 @@ const Logs = () => {
                 <th className='logs-action'>Action</th>
             </tr>
           </thead>
-          <tbody className='log-head'>
+          <tbody className='log-body'>
             {logData && logData.map((log) => {
                 const { journal, key, time, statusComplete } = log
                 if (statusComplete === "completed") {
