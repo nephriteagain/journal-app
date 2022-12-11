@@ -27,8 +27,10 @@ const JournalTable = () => {
             <div className='redirect-div'>
             <button  className='redirect-logs'  style={{cursor: 'pointer'}} onClick={() => {handleLogs()}}> Check Logs</button>
         </div>
-
+        
+            <div className='scrollit'>
         <table className='table-journal'>
+
             <thead className='table-head'>
                 <tr className='table-head-row'>
                     <th className='task-column'>Task</th>
@@ -37,13 +39,13 @@ const JournalTable = () => {
                 </tr>
             </thead>
             <tbody className='table-body'>
-                { journalList.map((entry) => {
+                    { journalList.map((entry) => {
                     const { key, journal, time } = entry
                     return (
                         <tr key={key} className="table-body-row">
-                            <td>{journal}</td>
-                            <td>{time}</td>
-                            <td><button 
+                            <td className='task-data'>{journal}</td>
+                            <td className='task-time'>{time}</td>
+                            <td className='task-action'><button 
                                 className='button button-complete'
                             onClick={(e) => {
                                 e.stopPropagation
@@ -60,7 +62,9 @@ const JournalTable = () => {
                     )
                 }) }
             </tbody>
+
         </table>
+            </div>
 
     </div>
 

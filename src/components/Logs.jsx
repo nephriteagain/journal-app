@@ -35,7 +35,7 @@ const Logs = () => {
 
 
   return (
-    <div className='logs-div'>
+    <div className=' logs-div'>
         <div className='button-div'>
           <button className='redirect-home' style={{cursor: 'pointer'}} onClick={() => {backToHome()}}>Back to Home</button> <button className='button-clear'
             onClick={() => {
@@ -44,14 +44,14 @@ const Logs = () => {
           >Clear All Logs</button>
         </div>
 
-
+        <div className='scrollit'>
         <table className='log-table'>
           <thead className='log-head'>
             <tr className='log-row-head'>
                 <th className='logs-column'>Logs</th>
-                <th>Log Date</th>
-                <th>Status</th>
-                <th>Action</th>
+                <th className='logs-date'>Log Date</th>
+                <th className='logs-status'>Status</th>
+                <th className='logs-action'>Action</th>
             </tr>
           </thead>
           <tbody className='log-head'>
@@ -61,10 +61,10 @@ const Logs = () => {
 
                   return (
                     <tr key={key} className="log-row-body">
-                        <td>{journal}</td>
-                        <td>{time}</td>
-                        <td>{statusComplete}</td>
-                        <td className='td-logo'>{<BsPersonCheck />}</td>
+                        <td className='logs-column'>{journal}</td>
+                        <td className='logs-date'>{time}</td>
+                        <td className='logs-status'>{statusComplete}</td>
+                        <td className='td-logo logs-action'>{<BsPersonCheck />}</td>
                     </tr>
                 )
 
@@ -87,7 +87,7 @@ const Logs = () => {
             })}
         </tbody>
     </table>
-
+    </div>
     </div>
     
   )

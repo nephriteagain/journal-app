@@ -16,7 +16,9 @@
 }
 
 html {
+  height: 100vh;
   background: linear-gradient(to right, #d7d0cc, #ffffff);
+  overflow-y: hidden;
 }
 
 

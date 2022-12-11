@@ -19,10 +19,9 @@
 }
 
 
+
 .table-journal {
-  width: 70%;
-  max-width: 70%;
-  min-width: 70%;
+  width: 800px;
   margin: 0 auto;
   margin-bottom: 10rem;
   border-collapse: collapse;
@@ -45,20 +44,52 @@
   text-align: left;
 }
 
+.table-head-row {
+  position: fixed;
+  top: 235.5px;
+}
+
 .table-head-row th {
   padding-bottom: 0.5rem;
 }
 
 .table-body-row td {
   vertical-align: middle;
+  padding: 0.15rem;
 }
 
-.task-column {
-  width: 40%;
+.task-column, .task-data {
+  width: 320px;
+}
+
+.date-column, .task-time {
+  width: 240px;
+}
+
+.action-column, .action-data {
+  width: 240px;
 }
 
 .logs-column {
-  width: 40%;
+  width: 304px;
+}
+
+.logs-date {
+  width: 228.15px;
+
+}
+
+.logs-status {
+  width: 105.01px;
+}
+
+.logs-action {
+  width: 121.85px;
+}
+
+.log-row-head {
+  position: absolute;
+  top: 171px;
 }
 
 
@@ -98,7 +129,7 @@
 
 
 .log-table {
-  width: 50%;
+  width: 760px;
   margin: 0 auto;
   border-collapse: collapse;
   font-family: 'Courier New', monospace;
@@ -125,13 +156,14 @@
 
 .log-row-body td {
   vertical-align: middle;
+  font-size: 110%;
 
 }
 
 .button-div {
   width: 50%;
   margin: 0 auto;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
   padding-top: 30px;
 }
 
@@ -143,9 +175,9 @@
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
   width: 150x;
   height: 30px;
-  font-size: larger;
+  font-size: 110%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 600;
+
 
 }
 
@@ -157,9 +189,8 @@
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
   width: 150x;
   height: 30px;
-  font-size: larger;
+  font-size: 110%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 600;
 }
 
 .redirect-home:hover, .button-clear:hover {
@@ -193,7 +224,7 @@ td {
 .create-task {
   width: 50%;
   margin: 0 auto;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -245,16 +276,11 @@ td {
 }
 
 
-.table-body {
-  overflow: scroll;
-  max-height: 600px;
-
-}
 
 .redirect-div {
-  width: 70%;
+  width: 800px;
   margin: 0 auto;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-align: right;
 }
 
@@ -263,7 +289,10 @@ td {
   height: 30px;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
   border-color: #00bcd4;
-  background-color: lightblue
+  background-color: lightblue;
+  position: relative;
+  bottom: 40px;
+  right: 9px;
 
 }
 
@@ -278,4 +307,10 @@ td {
 
 .logs-div {
   padding-top: 5rem;
+}
+
+
+.scrollit {
+  overflow-y:scroll;
+  height:450px;
 }
