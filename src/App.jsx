@@ -20,6 +20,8 @@ function App() {
     setWriteJournal('')
   }
 
+
+
   const addToList = (writeJournal) => {
     let dateToday = `${new Date()}`.split('').slice(0, 21).join("")
     
