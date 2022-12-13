@@ -10,227 +10,12 @@
   align-items: center;
   padding: none;
 
-  
 }
+  /* CreateJournal */
 
-.title {
-  padding-top: 1.5rem;
-}
-
-
-
-.table-journal {
-  width: 800px;
-  margin: 0 auto;
-  margin-bottom: 10rem;
-  border-collapse: collapse;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-.table-journal th,
-.table-journal td {
-  padding: 0.5rem;
-  border: 1px solid black;
-}
-
-.table-journal th {
-  background-color: lightgray;
-  font-weight: bold;
-}
-
-.table-head {
-  text-align: left;
-}
-
-.table-head-row {
-  position: fixed;
-  top: 235.5px;
-}
-
-.table-head-row th {
-  padding-bottom: 0.5rem;
-}
-
-.table-body-row td {
-  vertical-align: middle;
-  padding: 0.15rem;
-}
-
-.task-column, .task-data {
-  width: 320px;
-}
-
-.date-column, .task-time {
-  width: 240px;
-}
-
-.action-column, .action-data {
-  width: 240px;
-}
-
-.logs-column {
-  width: 304px;
-}
-
-.logs-date {
-  width: 228.15px;
-
-}
-
-.logs-status {
-  width: 105.01px;
-}
-
-.logs-action {
-  width: 121.85px;
-}
-
-.log-head {
-  overflow-x: hidden;
-  min-width: 760px;
-}
-
-.log-row-head {
-  position: absolute;
-  top: 171px;
-}
-
-.log-row-body {
-  min-width: 760px;
-  overflow-x: hidden;
-}
-
-.button-complete {
-  background-color: #4CAF50;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  margin-right: 1rem;
-}
-
-.button-delete {
-  background-color: #f44336;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.button-complete,
-.button-delete {
-  padding: 0.5rem 0.75rem;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.button-complete:hover,
-.button-delete:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.2);
-}
-
-
-.log-table {
-  width: 760px;
-  min-width: 760px;
-  overflow-x: hidden;
-  margin: 0 auto;
-  border-collapse: collapse;
-  font-family: 'Courier New', monospace;
-  font-size: 10px;
-  text-align: center;
-  color: white;
-  background-color: #333;
-}
-
-.log-table th,
-.log-table td {
-  padding: 0.2rem;
-  border: 1px solid black;
-}
-
-.log-table th {
-  background-color: #555;
-  font-weight: bold;
-}
-
-.log-row-head th {
-  padding-bottom: 0.5rem;
-}
-
-.log-row-body td {
-  vertical-align: middle;
-  font-size: 110%;
-
-}
-
-.button-div {
-  width: 50%;
-  margin: 0 auto;
-  margin-bottom: 100px;
-  padding-top: 30px;
-}
-
-.redirect-home {
-  background-color: rgb(58, 236, 236);
-  border-color: rgb(58, 236, 236);
-  cursor: pointer;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
-  width: 150x;
-  height: 30px;
-  font-size: 110%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-
-}
-
-.button-clear { 
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background-color: rgb(247, 169, 60);
-  border-color: rgb(247, 169, 60);
-  cursor: pointer;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
-  width: 150x;
-  height: 30px;
-  font-size: 110%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.redirect-home:hover, .button-clear:hover {
-  transform: scale(1.1);
-  transition: all 0.3s ease;
-}
-
-.button-redo {
-  background-color: #fdd835;
-  color: black;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.button-redo:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.2);
-}
-
-
-
-
-td {
-  overflow: hidden;
-}
+  .title {
+    padding-top: 1.5rem;
+  }
 
 .create-task {
   width: 50%;
@@ -282,6 +67,252 @@ td {
   transform: scale(1.1);
 }
 
+/* end of CreateJournal */
+
+
+/* JournalTable */
+
+.table-journal {
+  width: 800px;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.table-journal th,
+.table-journal td {
+  padding: 0.5rem;
+  /* border: 1px solid black; */
+}
+
+.table-journal th {
+  background-color: lightgray;
+  font-weight: bold;
+}
+
+.table-head {
+  text-align: left;
+}
+
+.table-head-row {
+  position: fixed;
+  top: 235.5px;
+}
+
+.table-head-row th {
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+
+.table-body-row td {
+  vertical-align: middle;
+  padding: 0.15rem;
+}
+
+.task-column,
+.task-data {
+  width: 320px;
+}
+
+.date-column,
+.task-time {
+  width: 240px;
+}
+
+.action-column,
+.action-data {
+  width: 240px;
+}
+
+.button-complete {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.button-delete {
+  background-color: #f44336;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.button-complete,
+.button-delete {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-complete:hover,
+.button-delete:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* end of JournalTable */
+
+/* Logs */
+
+.logs-column {
+  width: 304px;
+}
+
+.logs-date {
+  width: 228.15px;
+
+}
+
+.logs-status {
+  width: 105.01px;
+}
+
+.logs-action {
+  width: 121.85px;
+}
+
+.log-head {
+  overflow-x: hidden;
+  min-width: 760px;
+}
+
+.log-row-head {
+  position: fixed;
+  top: 171px;
+}
+
+.log-row-body {
+  min-width: 760px;
+  overflow-x: hidden;
+}
+
+.log-body>tr:nth-child(even) {
+  position: relative;
+  background-color: #555;
+}
+
+.log-body>tr:nth-child(odd) {
+  position: relative;
+}
+
+.log-table {
+  position: relative;
+  width: 760px;
+  min-width: 760px;
+  overflow-x: hidden;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  text-align: center;
+  color: white;
+  background-color: #333;
+}
+
+.log-table th,
+.log-table td {
+  padding: 0.2rem;
+  /* border: 1px solid black; */
+}
+
+.log-table th {
+  background-color: #555;
+  font-weight: bold;
+}
+
+.log-row-head th {
+  padding-bottom: 0.5rem;
+}
+
+.log-row-body td {
+  vertical-align: middle;
+  font-size: 110%;
+
+}
+
+.button-div {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  padding-top: 30px;
+}
+
+.redirect-home {
+  background-color: rgb(58, 236, 236);
+  border-color: rgb(58, 236, 236);
+  cursor: pointer;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  width: 150x;
+  height: 30px;
+  font-size: 110%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+
+.button-clear {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgb(247, 169, 60);
+  border-color: rgb(247, 169, 60);
+  cursor: pointer;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  width: 150x;
+  height: 30px;
+  font-size: 110%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.redirect-home:hover,
+.button-clear:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.button-redo {
+  background-color: #fdd835;
+  color: black;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.button-redo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+td {
+  overflow: hidden;
+}
+
+/* end of Logs */
+
+
+
+
+
+
+
+
+
 .td-logo {
   font-size: 200%;
 }
@@ -322,20 +353,33 @@ td {
 
 
 .scrollit {
+  position: relative;
   overflow-y: auto;
   height: 417px;
 }
 
 
 .table-body > tr:nth-child(even) {
+  position: relative;
+  top: 2px;
   background: #CCC;
   box-shadow: 0px -3px 5px  black;
+
 }
-.table-body > tr:nth-child(odd) {background: #FFF}
+.table-body > tr:nth-child(odd) {
+  left: 5px;
+  position: relative;
+  top: 3px;
+  background: #FFF;
+  box-shadow: 0px -0px 7px black;
+}
 
 
 /* clear logs modal */
 
+
+
+/* ModalClear */
 .modal-overlay{
   position:fixed;
   top:0;
@@ -387,3 +431,5 @@ td {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.2);
 }
+
+/* end of ModalClear */

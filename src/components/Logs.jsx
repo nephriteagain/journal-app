@@ -73,10 +73,10 @@ const Logs = () => {
 
                   return (
                       <tr key={key} className="log-row-body">
-                          <td>{journal}</td>
-                          <td>{time}</td>
-                          <td>{statusComplete}</td>
-                          <td><button className='button button-redo' value={log} onClick={(e) => {
+                          <td className='logs-column'>{journal}</td>
+                          <td className='logs-date'>{time}</td>
+                          <td className='logs-status'>{statusComplete}</td>
+                          <td className='td-logo logs-action'><button className='button button-redo' value={log} onClick={(e) => {
                             let item = log
                             e.stopPropagation
                             retryJournal(item)
